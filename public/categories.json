@@ -1,0 +1,22 @@
+[
+    {
+        "category_id": "C001",
+        "category_name": "Laptops",
+        "slug": "laptop"
+    },
+    {
+        "category_id": "C002",
+        "category_name": "Phones",
+        "slug": "phone"
+    },
+    {
+        "category_id": "C003",
+        "category_name": "Smart Watches",
+        "slug": "Smart Watches"
+    },
+    {
+        "category_id": "C004",
+        "category_name": "Accessories",
+        "slug": "Accessory"
+    }
+]
