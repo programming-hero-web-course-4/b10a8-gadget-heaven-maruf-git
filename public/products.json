@@ -3,7 +3,7 @@
         "product_id": "L001",
         "product_title": "Apple MacBook Pro 16",
         "product_image": "https://i.ibb.co.com/RhsqBZK/macbook-pro-16-inch-m3-pro-black-01-500x500.jpg",
-        "category": "Laptops",
+        "category_name": "Laptops",
         "price": 999.99,
         "description": "Sleek and powerful ultrabook with long battery life and a 14-inch display.",
         "Specification": [
@@ -19,7 +19,7 @@
         "product_id": "L002",
         "product_title": "Asus TUF Gaming A15",
         "product_image": "https://i.ibb.co.com/Btc58ZJ/a15-fa506nfr-0001-500x500.jpg",
-        "category": "Laptops",
+        "category_name": "Laptops",
         "price": 1499.99,
         "description": "High-performance gaming laptop with dedicated graphics and RGB keyboard.",
         "Specification": [
@@ -35,7 +35,7 @@
         "product_id": "L003",
         "product_title": "Lenovo Yoga 6 13ABR8",
         "product_image": "https://i.ibb.co.com/2YWYmHS/yoga-6-13abr8-001-500x500.jpg",
-        "category": "Laptops",
+        "category_name": "Laptops",
         "price": 799.99,
         "description": "Versatile laptop with touchscreen and 360-degree hinge, perfect for on-the-go use.",
         "Specification": [
@@ -51,7 +51,7 @@
         "product_id": "L004",
         "product_title": "HP 15s-eq2330AU",
         "product_image": "https://i.ibb.co.com/mbNBhTJ/15s-eq2330au-01-500x500.jpg",
-        "category": "Laptops",
+        "category_name": "Laptops",
         "price": 1099.99,
         "description": "Lightweight and secure laptop designed for business professionals.",
         "Specification": [
@@ -67,7 +67,7 @@
         "product_id": "L005",
         "product_title": "Apple MacBook Air",
         "product_image": "https://i.ibb.co.com/ynhK124/macbook-air-13-3-inch-500x500.jpg",
-        "category": "Laptops",
+        "category_name": "Laptops",
         "price": 1879.99,
         "description": "Affordable laptop with solid performance for students and everyday tasks.",
         "Specification": [
@@ -83,7 +83,7 @@
         "product_id": "L006",
         "product_title": "MSI Modern 14 C13M ",
         "product_image": "https://i.ibb.co.com/7gV5FXN/modern-14-c13m-beige-rose-1-500x500.jpg",
-        "category": "Laptops",
+        "category_name": "Laptops",
         "price": 989.99,
         "description": "Powerful workstation laptop for professionals, with top-tier performance and large screen.",
         "Specification": [
@@ -99,7 +99,7 @@
         "product_id": "P001",
         "product_title": "Samsung Galaxy S23 Ultra",
         "product_image": "https://i.ibb.co.com/hsGrPqh/galaxy-s23-ultra-green-01-500x500.jpg",
-        "category": "Phones",
+        "category_name": "Phones",
         "price": 1599.99,
         "description": "Latest 5G smartphone with high-resolution camera and fast charging support.",
         "Specification": [
@@ -115,7 +115,7 @@
         "product_id": "P002",
         "product_title": "Honor X9b 5G (",
         "product_image": "https://i.ibb.co.com/cy8Qp7d/x9b-5g-03-500x500.jpg",
-        "category": "Phones",
+        "category_name": "Phones",
         "price": 499.99,
         "description": "Affordable smartphone with essential features and solid battery life.",
         "Specification": [
@@ -131,7 +131,7 @@
         "product_id": "P003",
         "product_title": "iPhone 15 Pro Max ",
         "product_image": "https://i.ibb.co.com/MSB7Btr/iphone-15-pro-max-blue-titanium-official-500x500.jpg",
-        "category": "Phones",
+        "category_name": "Phones",
         "price": 2199.99,
         "description": "Premium flagship phone with top-of-the-line specs and excellent camera quality.",
         "Specification": [
@@ -147,7 +147,7 @@
         "product_id": "P004",
         "product_title": "Samsung Galaxy Z Flip5",
         "product_image": "https://i.ibb.co.com/DLP3CwP/galaxy-z-flip5-graphite-01-500x500.jpg",
-        "category": "Phones",
+        "category_name": "Phones",
         "price": 1799.99,
         "description": "Innovative foldable phone with flexible screen and powerful performance.",
         "Specification": [
@@ -163,7 +163,7 @@
         "product_id": "S001",
         "product_title": "Zeblaze Swim GPS Swimming Smartwatch",
         "product_image": "https://i.ibb.co.com/t4RDdj1/swim-01-500x500.jpg",
-        "category": "Smart Watches",
+        "category_name": "Smart Watches",
         "price": 149.99,
         "description": "Lightweight fitness smartwatch with activity tracking and heart rate monitor.",
         "Specification": [
@@ -179,7 +179,7 @@
         "product_id": "S002",
         "product_title": "Havit M9035 Smart Watch",
         "product_image": "https://i.ibb.co.com/hZ1J4LC/m9035-black-01-500x500.jpg",
-        "category": "Smart Watches",
+        "category_name": "Smart Watches",
         "price": 399.99,
         "description": "High-end smartwatch with health tracking, GPS, and customizable watch faces.",
         "Specification": [

@@ -1,9 +1,10 @@
-import Footer from "./Footer";
+
 import Heading from "./Heading";
 import Navbar from "./Navbar";
 import bannerImg from "../assets/banner.jpg"
-import Home from "../pages/Home";
+
 import { Outlet } from "react-router-dom";
+import Home from "../pages/Home";
 
 const Root = () => {
     return (
@@ -17,7 +18,7 @@ const Root = () => {
                         {/* <Footer></Footer> */}
                     </div>
                 </div>
-                <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center mb-[250px] mt-20 ">
+                <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center mb-[280px] mt-20 ">
                     <div className=" border border-white absolute bottom-[-220px] w-[60%] mx-auto bg-[rgba(255,255,255,0.3)] rounded-xl p-4 ">
                         <div>
                             <img className="h-[450px] w-full object-cover rounded-xl" src={bannerImg} alt="" />
@@ -28,10 +29,9 @@ const Root = () => {
 
             {/* root outlet for home */}
             <div className="max-w-screen-xl mx-auto">
-                <Outlet></Outlet>
+                {/* <Outlet></Outlet> */}
+                <Home></Home>
             </div>
-
-
         </div>
     );
 };
