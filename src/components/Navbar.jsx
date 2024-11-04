@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useParams } from "react-router-dom";
-import { setStoredWishList } from "../utils/addToDb";
+import { getStoredCartList, getStoredWishList } from "../utils/addToDb";
+
 
 
 const Navbar = () => {
@@ -8,13 +9,19 @@ const Navbar = () => {
     const { category_name } = useParams();
     // for dynamic path
     // console.log("our category name:", category_name);
+    const [cartListLength, setCartListLength] = useState(0);
+    const [wishListLength, setWishListLength] = useState(0);
+    useEffect(() => {
+        const currentCartList = getStoredCartList();
+        setCartListLength(currentCartList.length);
+        // console.log(currentCartList)
+    }, [])
+    useEffect(() => {
+        const currentWishList = getStoredWishList();
+        setWishListLength(currentWishList.length);
+        // console.log(currentCartList)
+    }, [])
 
-    // const wishListProducts = setStoredWishList();
-    // const wishListProductsLength = wishListProducts.length;
-    // const [wishListLength,setWishListLength] = useState(0);
-    // useEffect(() => {
-
-    // }, [])
     return (
         <div className={`navbar  max-w-screen-xl mx-auto px-0 ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? "bg-[rgb(149,56,226)]" : "bg-white"}`}>
             <div className="navbar-start">
@@ -78,11 +85,11 @@ const Navbar = () => {
             <div className="navbar-end gap-3">
                 <button className="btn">
                     Cart
-                    <div className="badge badge-secondary">+99</div>
+                    <div className="badge badge-secondary">{cartListLength}</div>
                 </button>
                 <button className="btn">
                     WishList
-                    <div className="badge badge-secondary">+99</div>
+                    <div className="badge badge-secondary">{wishListLength}</div>
                 </button>
             </div>
         </div>
