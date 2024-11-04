@@ -8,7 +8,7 @@ const Navbar = () => {
     const { category_name } = useParams();
     // for dynamic path
     // console.log("our category name:", category_name);
-    
+
     // const wishListProducts = setStoredWishList();
     // const wishListProductsLength = wishListProducts.length;
     // const [wishListLength,setWishListLength] = useState(0);

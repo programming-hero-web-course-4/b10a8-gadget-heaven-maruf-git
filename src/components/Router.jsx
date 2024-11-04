@@ -10,6 +10,8 @@ import CategoryProducts from "./CategoryProducts";
 
 import AllProduct from "./AllProduct";
 import ProductDetails from "./ProductDetails";
+import Cart from "./Cart";
+import Wishlist from "./Wishlist";
 
 const router = createBrowserRouter([
     {
@@ -48,7 +50,18 @@ const router = createBrowserRouter([
             <Navbar></Navbar>
             <Dashboard></Dashboard>
             <Footer></Footer>
-        </div>
+        </div>,
+        children: [
+            {
+                path: "/dashboard",
+                element: <Cart></Cart>
+            },
+            {
+                path:"/dashboard/wishlist",
+                element: <Wishlist></Wishlist>
+            }
+
+        ]
     },
     {
         path: "/:product_category/:product_id",
