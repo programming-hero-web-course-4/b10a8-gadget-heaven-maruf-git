@@ -54,11 +54,13 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/dashboard",
-                element: <Cart></Cart>
+                element: <Cart></Cart>,
+                loader: ()=>fetch("/products.json")
             },
             {
                 path:"/dashboard/wishlist",
-                element: <Wishlist></Wishlist>
+                element: <Wishlist></Wishlist>,
+                loader: ()=>fetch("/products.json")
             }
 
         ]
