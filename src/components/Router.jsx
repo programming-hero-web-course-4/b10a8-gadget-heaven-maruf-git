@@ -5,9 +5,11 @@ import Root from "./Root";
 import Footer from "./Footer";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
-import Home from "../pages/Home";
+
 import CategoryProducts from "./CategoryProducts";
-import AllProducts from "./AllProducts";
+
+import AllProduct from "./AllProduct";
+import ProductDetails from "./ProductDetails";
 
 const router = createBrowserRouter([
     {
@@ -22,29 +24,15 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <AllProducts></AllProducts>
-
+                element: <AllProduct></AllProduct>,
+                loader: () => fetch("/products.json")
             },
             {
                 path: "/categories/:category_name",
                 element: <CategoryProducts></CategoryProducts>,
                 loader: () => fetch("/products.json")
-            }
-
+            },
         ]
-        // children: [
-        //     {
-        //         path: "/",
-        //         element: <Home></Home>,
-        //         loader: () => fetch("/categories.json"),
-        //     },
-        //     {
-        //         path: "/categories/:category_name",
-        //         element: <CategoryProducts></CategoryProducts>,
-        //         loader: () => fetch("/products.json")
-        //     }
-
-        // ]
     },
     {
         path: "/statistics",
@@ -62,6 +50,15 @@ const router = createBrowserRouter([
             <Footer></Footer>
         </div>
     },
+    {
+        path: "/:product_category/:product_id",
+        element: <div className="mt-5">
+            <Navbar></Navbar>
+            <ProductDetails></ProductDetails>
+            <Footer></Footer>
+        </div>,
+        loader: () => fetch("/products.json")
+    }
 
 ]);
 

@@ -6,7 +6,7 @@
         "category_name": "Laptops",
         "price": 999.99,
         "description": "Sleek and powerful ultrabook with long battery life and a 14-inch display.",
-        "Specification": [
+        "specification": [
             "M3 Pro Chip",
             "16GB RAM",
             "512GB SSD",
@@ -22,7 +22,7 @@
         "category_name": "Laptops",
         "price": 1499.99,
         "description": "High-performance gaming laptop with dedicated graphics and RGB keyboard.",
-        "Specification": [
+        "specification": [
             "Intel i9 processor",
             "32GB RAM",
             "1TB SSD",
@@ -38,7 +38,7 @@
         "category_name": "Laptops",
         "price": 799.99,
         "description": "Versatile laptop with touchscreen and 360-degree hinge, perfect for on-the-go use.",
-        "Specification": [
+        "specification": [
             "Intel i5 processor",
             "8GB RAM",
             "256GB SSD",
@@ -54,7 +54,7 @@
         "category_name": "Laptops",
         "price": 1099.99,
         "description": "Lightweight and secure laptop designed for business professionals.",
-        "Specification": [
+        "specification": [
             "Intel i7 processor",
             "16GB RAM",
             "512GB SSD",
@@ -70,7 +70,7 @@
         "category_name": "Laptops",
         "price": 1879.99,
         "description": "Affordable laptop with solid performance for students and everyday tasks.",
-        "Specification": [
+        "specification": [
             "M1 chip",
             "8GB RAM",
             "256GB SSD",
@@ -86,7 +86,7 @@
         "category_name": "Laptops",
         "price": 989.99,
         "description": "Powerful workstation laptop for professionals, with top-tier performance and large screen.",
-        "Specification": [
+        "specification": [
             "Intel Xeon processor",
             "64GB RAM",
             "1TB SSD",
@@ -102,7 +102,7 @@
         "category_name": "Phones",
         "price": 1599.99,
         "description": "Latest 5G smartphone with high-resolution camera and fast charging support.",
-        "Specification": [
+        "specification": [
             "Snapdragon 888",
             "128GB storage",
             "48MP camera",
@@ -113,12 +113,12 @@
     },
     {
         "product_id": "P002",
-        "product_title": "Honor X9b 5G (",
+        "product_title": "Honor X9b 5G ",
         "product_image": "https://i.ibb.co.com/cy8Qp7d/x9b-5g-03-500x500.jpg",
         "category_name": "Phones",
         "price": 499.99,
         "description": "Affordable smartphone with essential features and solid battery life.",
-        "Specification": [
+        "specification": [
             "MediaTek Helio",
             "64GB storage",
             "13MP camera",
@@ -134,7 +134,7 @@
         "category_name": "Phones",
         "price": 2199.99,
         "description": "Premium flagship phone with top-of-the-line specs and excellent camera quality.",
-        "Specification": [
+        "specification": [
             "A17 Pro chip",
             "256GB storage",
             "Triple-lens camera",
@@ -150,7 +150,7 @@
         "category_name": "Phones",
         "price": 1799.99,
         "description": "Innovative foldable phone with flexible screen and powerful performance.",
-        "Specification": [
+        "specification": [
             "Flexible OLED display",
             "256GB storage",
             "12GB RAM",
@@ -166,7 +166,7 @@
         "category_name": "Smart Watches",
         "price": 149.99,
         "description": "Lightweight fitness smartwatch with activity tracking and heart rate monitor.",
-        "Specification": [
+        "specification": [
             "Heart rate monitor",
             "GPS",
             "Sleep tracking",
@@ -182,7 +182,7 @@
         "category_name": "Smart Watches",
         "price": 399.99,
         "description": "High-end smartwatch with health tracking, GPS, and customizable watch faces.",
-        "Specification": [
+        "specification": [
             "ECG",
             "GPS",
             "Blood oxygen monitor",

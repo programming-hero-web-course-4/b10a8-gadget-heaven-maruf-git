@@ -1,10 +1,22 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, NavLink, useLocation, useParams } from "react-router-dom";
+import { setStoredWishList } from "../utils/addToDb";
 
 
 const Navbar = () => {
     const location = useLocation();
+    const { category_name } = useParams();
+    // for dynamic path
+    // console.log("our category name:", category_name);
+    
+    // const wishListProducts = setStoredWishList();
+    // const wishListProductsLength = wishListProducts.length;
+    // const [wishListLength,setWishListLength] = useState(0);
+    // useEffect(() => {
+
+    // }, [])
     return (
-        <div className={`navbar  max-w-screen-xl mx-auto px-0 ${location.pathname === "/" ? "bg-[rgb(149,56,226)]" : "bg-white"}`}>
+        <div className={`navbar  max-w-screen-xl mx-auto px-0 ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? "bg-[rgb(149,56,226)]" : "bg-white"}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className={`btn btn-ghost lg:hidden`}>
@@ -30,15 +42,15 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <Link className={`text-xl font-bold  ${location.pathname === "/" ? " text-white" : ""}`}>Gadget Heaven</Link>
+                <Link className={`text-xl font-bold  ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}>Gadget Heaven</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className={`menu menu-horizontal px-1 gap-3 ${location.pathname === "/" ? " text-white" : ""}`}>
+                <ul className={`menu menu-horizontal px-1 gap-3 ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}>
                     <li>
                         <NavLink
                             to="/"
                             // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
-                            className={`${location.pathname === "/" ? " text-white" : ""}`}
+                            className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                         >
                             Home
                         </NavLink>
@@ -50,7 +62,7 @@ const Navbar = () => {
                         //     }
                         // }
                         // className={({ isActive }) =>isActive ? "border-none border-b-2 border-red-500 text-green-400 text-3xl" : ""}
-                        className={`${location.pathname === "/" ? " text-white" : ""}`}
+                        className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                     >Statistics</NavLink></li>
                     <li><NavLink to="/dashboard"
                         // className={({ isActive }) =>{
@@ -59,7 +71,7 @@ const Navbar = () => {
                         //     }
                         // }
                         // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
-                        className={`${location.pathname === "/" ? " text-white" : ""}`}
+                        className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                     >Dashboard</NavLink></li>
                 </ul>
             </div>

@@ -3,7 +3,7 @@ import Heading from "./Heading";
 import Navbar from "./Navbar";
 import bannerImg from "../assets/banner.jpg"
 
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import Home from "../pages/Home";
 
 const Root = () => {
