@@ -1,6 +1,6 @@
 // import React from 'react';
 import { GiSettingsKnobs } from "react-icons/gi";
-import { getStoredCartList } from "../utils/addToDb";
+import { getStoredCartList, removeFromStoredCartList } from "../utils/addToDb";
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
@@ -10,7 +10,7 @@ const Cart = () => {
     const products = useLoaderData();
     const [cartList, setCartList] = useState([]);
     const [cost, setCost] = useState(0);
-    console.log("loader data:", products)
+ 
     useEffect(() => {
         const storedCartList = getStoredCartList();
         const newCartList = products.filter(product => storedCartList.includes(product.product_id))
@@ -20,13 +20,19 @@ const Cart = () => {
         newCost = newCost.toFixed(2);
         setCost(newCost);
     }, [products])
-    console.log("family:", cartList);
+
 
     // handle sort
     const handleSort = () => {
         const copyOfCartList = [...cartList];
         copyOfCartList.sort((a, b) => (b.price - a.price));
         setCartList(copyOfCartList);
+        console.log("sorting");
+    }
+
+    // handle Cart Remove
+    const handleCartRemove = (id) => {
+        removeFromStoredCartList(id);
     }
 
     return (
@@ -50,7 +56,7 @@ const Cart = () => {
                             <div className="space-y-2 w-full">
                                 <div className="flex items-center justify-between">
                                     <h1 className="font-semibold text-2xl">{item.product_title}</h1>
-                                    <button className="mr-28"><RxCrossCircled className="text-3xl text-red-600" /></button>
+                                    <button onClick={() => handleCartRemove(item.product_id)} className="mr-28"><RxCrossCircled className="text-3xl text-red-600" /></button>
                                 </div>
 
                                 <p className="text-[rgba(9,8,15,0.6)] text-lg">{item.description}</p>

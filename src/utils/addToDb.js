@@ -22,6 +22,14 @@ const setStoredCartList = (productId) => {
     }
 }
 
+const removeFromStoredCartList = (productId) => {
+    const storedCartList = getStoredCartList();
+    const newStoredCartList = storedCartList.filter(item => item !== productId);
+    localStorage.removeItem("cart-list");
+    newStoredCartList.forEach((item) => setStoredCartList(item));
+    // localStorage.removeItem("cart-list", productId);
+}
+
 const getStoredWishList = () => {
     const storedWishlistStr = localStorage.getItem('wishlist');
     if (storedWishlistStr) {
@@ -46,4 +54,12 @@ const setStoredWishList = (productId) => {
 
 }
 
-export { setStoredCartList,setStoredWishList,getStoredWishList,getStoredCartList };
+const removeFromStoredWishList = (productId) => {
+    const storedWishList = getStoredWishList();
+    const newStoredWishList = storedWishList.filter(item => item !== productId);
+    localStorage.removeItem("wishlist");
+    newStoredWishList.forEach((item) => setStoredWishList(item));
+    // localStorage.removeItem("cart-list", productId);
+}
+
+export { setStoredCartList, setStoredWishList, getStoredWishList, getStoredCartList,removeFromStoredCartList,removeFromStoredWishList };
