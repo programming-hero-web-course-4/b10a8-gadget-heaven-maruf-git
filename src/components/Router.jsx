@@ -5,20 +5,27 @@ import Root from "./Root";
 import Footer from "./Footer";
 import Statistics from "../pages/Statistics";
 import Dashboard from "../pages/Dashboard";
+import Home from "../pages/Home";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>
-            <Navbar></Navbar>
+        element: <div >
+            {/* <Navbar></Navbar> */}
             <Root></Root>
             <Footer></Footer>
         </div>,
-        errorElement: <ErrorPage></ErrorPage>
+        errorElement: <ErrorPage></ErrorPage>,
+        children:[
+            {
+                path:"/",
+                element: <Home></Home>
+            }
+        ]
     },
     {
         path: "/statistics",
-        element: <div>
+        element: <div className="mt-5">
             <Navbar></Navbar>
             <Statistics></Statistics>
             <Footer></Footer>
@@ -26,7 +33,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <div>
+        element: <div className="mt-5">
             <Navbar></Navbar>
             <Dashboard></Dashboard>
             <Footer></Footer>
