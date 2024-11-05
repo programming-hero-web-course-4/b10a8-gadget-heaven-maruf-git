@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { FaRegStar } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import { FcLike } from "react-icons/fc";
 import { IoCartOutline } from "react-icons/io5";
 import { setStoredCartList, setStoredWishList } from '../utils/addToDb';
+import UserContext from '../context/UserContext';
 
 
 // eslint-disable-next-line react/prop-types
 const ProductDetails = () => {
-
+    const { handleCart,handleWishlist } = useContext(UserContext);
     const { product_id } = useParams();
     // console.log("our category:", product_category, product_id);
     const products = useLoaderData();
@@ -29,10 +30,12 @@ const ProductDetails = () => {
     // handle add to cart
     const handleAddToCart = () => {
         setStoredCartList(product_id);
+        handleCart();
     }
     // handle add to wishlist
     const handleAddToWishList = () => {
         setStoredWishList(product_id);
+        handleWishlist();
     }
     return (
         <div >
@@ -55,7 +58,7 @@ const ProductDetails = () => {
                                 <p className="text-[rgb(9,8,15)] font-bold text-lg">Specification:</p>
                                 <div className="">
                                     {
-                                        specification && specification.map((spec, idx) => <p key={idx}>{idx+1}. {spec}</p>)
+                                        specification && specification.map((spec, idx) => <p key={idx}>{idx + 1}. {spec}</p>)
                                     }
                                 </div>
                                 <div className="flex gap-2  items-center">

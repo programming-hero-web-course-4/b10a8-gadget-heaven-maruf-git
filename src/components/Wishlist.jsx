@@ -1,13 +1,15 @@
 
 import { getStoredWishList, removeFromStoredWishList } from "../utils/addToDb";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
+import UserContext from "../context/UserContext";
 
 const Wishlist = () => {
     const products = useLoaderData();
     const [wishList, setWishList] = useState([]);
-
+    // wishlist count functionality
+    const { handleWishlist} = useContext(UserContext);
     useEffect(() => {
         const storedWishList = getStoredWishList();
         const newWishList = products.filter(product => storedWishList.includes(product.product_id))
@@ -17,6 +19,10 @@ const Wishlist = () => {
     // handle wish list item remove
     const handleWishListRemove = (id) => {
         removeFromStoredWishList(id);
+        const storedWishList = getStoredWishList();
+        const newWishList = products.filter(product => storedWishList.includes(product.product_id))
+        setWishList(newWishList);
+        handleWishlist();
     }
 
     return (

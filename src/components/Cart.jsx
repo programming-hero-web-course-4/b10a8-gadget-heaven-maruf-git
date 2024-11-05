@@ -1,20 +1,23 @@
 // import React from 'react';
 import { GiSettingsKnobs } from "react-icons/gi";
 import { getStoredCartList, removeFromStoredCartList } from "../utils/addToDb";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
+import UserContext from "../context/UserContext";
 
 
 const Cart = () => {
     const products = useLoaderData();
     const [cartList, setCartList] = useState([]);
     const [cost, setCost] = useState(0);
- 
+    // cart count functionality
+    const { handleCart} = useContext(UserContext);
     useEffect(() => {
         const storedCartList = getStoredCartList();
         const newCartList = products.filter(product => storedCartList.includes(product.product_id))
         setCartList(newCartList);
+
         let newCost = 0;
         newCartList.forEach(cartItem => newCost += cartItem.price);
         newCost = newCost.toFixed(2);
@@ -33,6 +36,15 @@ const Cart = () => {
     // handle Cart Remove
     const handleCartRemove = (id) => {
         removeFromStoredCartList(id);
+        const storedCartList = getStoredCartList();
+        const newCartList = products.filter(product => storedCartList.includes(product.product_id))
+        setCartList(newCartList);
+
+        let newCost = 0;
+        newCartList.forEach(cartItem => newCost += cartItem.price);
+        newCost = newCost.toFixed(2);
+        setCost(newCost);
+        handleCart();
     }
 
     return (

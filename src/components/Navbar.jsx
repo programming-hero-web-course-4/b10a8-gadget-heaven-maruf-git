@@ -1,26 +1,29 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { getStoredCartList, getStoredWishList } from "../utils/addToDb";
+import UserContext from "../context/UserContext";
 
 
 
 const Navbar = () => {
     const location = useLocation();
     const { category_name } = useParams();
+    const {setCartCount,user,cartCount,wishlistCount} = useContext(UserContext);
     // for dynamic path
     // console.log("our category name:", category_name);
-    const [cartListLength, setCartListLength] = useState(0);
-    const [wishListLength, setWishListLength] = useState(0);
-    useEffect(() => {
-        const currentCartList = getStoredCartList();
-        setCartListLength(currentCartList.length);
-        // console.log(currentCartList)
-    }, [])
-    useEffect(() => {
-        const currentWishList = getStoredWishList();
-        setWishListLength(currentWishList.length);
-        // console.log(currentCartList)
-    }, [])
+
+    // const [cartListLength, setCartListLength] = useState(0);
+    // const [wishListLength, setWishListLength] = useState(0);
+    // useEffect(() => {
+    //     const currentCartList = getStoredCartList();
+    //     setCartListLength(currentCartList.length);
+        
+    // }, [])
+    // useEffect(() => {
+    //     const currentWishList = getStoredWishList();
+    //     setWishListLength(currentWishList.length);
+        
+    // }, [])
 
     return (
         <div className={`navbar  max-w-screen-xl mx-auto px-0 ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? "bg-[rgb(149,56,226)]" : "bg-white"}`}>
@@ -85,11 +88,11 @@ const Navbar = () => {
             <div className="navbar-end gap-3">
                 <button className="btn">
                     Cart
-                    <div className="badge badge-secondary">{cartListLength}</div>
+                    <div className="badge badge-secondary">{cartCount}</div>
                 </button>
                 <button className="btn">
                     WishList
-                    <div className="badge badge-secondary">{wishListLength}</div>
+                    <div className="badge badge-secondary">{wishlistCount}</div>
                 </button>
             </div>
         </div>
