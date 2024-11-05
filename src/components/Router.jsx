@@ -12,6 +12,8 @@ import AllProduct from "./AllProduct";
 import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
 import Wishlist from "./Wishlist";
+import PurchaseHistory from "../pages/PurchaseHistory";
+
 
 const router = createBrowserRouter([
     {
@@ -70,6 +72,15 @@ const router = createBrowserRouter([
         element: <div className="mt-5">
             <Navbar></Navbar>
             <ProductDetails></ProductDetails>
+            <Footer></Footer>
+        </div>,
+        loader: () => fetch("/products.json")
+    },
+    {
+        path: "/purchase-history",
+        element: <div className="mt-5">
+            <Navbar></Navbar>
+            <PurchaseHistory></PurchaseHistory>
             <Footer></Footer>
         </div>,
         loader: () => fetch("/products.json")

@@ -97,7 +97,7 @@
     },
     {
         "product_id": "P001",
-        "product_title": "Samsung Galaxy S23 Ultra",
+        "product_title": "Samsung Galaxy S23",
         "product_image": "https://i.ibb.co.com/hsGrPqh/galaxy-s23-ultra-green-01-500x500.jpg",
         "category_name": "Phones",
         "price": 1599.99,
@@ -113,7 +113,7 @@
     },
     {
         "product_id": "P002",
-        "product_title": "Honor X9b 5G ",
+        "product_title": "Honor X9b 5G",
         "product_image": "https://i.ibb.co.com/cy8Qp7d/x9b-5g-03-500x500.jpg",
         "category_name": "Phones",
         "price": 499.99,
@@ -129,7 +129,7 @@
     },
     {
         "product_id": "P003",
-        "product_title": "iPhone 15 Pro Max ",
+        "product_title": "iPhone 15 Pro Max",
         "product_image": "https://i.ibb.co.com/MSB7Btr/iphone-15-pro-max-blue-titanium-official-500x500.jpg",
         "category_name": "Phones",
         "price": 2199.99,
@@ -161,7 +161,7 @@
     },
     {
         "product_id": "S001",
-        "product_title": "Zeblaze Swim GPS Swimming Smartwatch",
+        "product_title": "Zeblaze Swim GPS",
         "product_image": "https://i.ibb.co.com/t4RDdj1/swim-01-500x500.jpg",
         "category_name": "Smart Watches",
         "price": 149.99,
@@ -177,7 +177,7 @@
     },
     {
         "product_id": "S002",
-        "product_title": "Havit M9035 Smart Watch",
+        "product_title": "Havit M9035 Smart",
         "product_image": "https://i.ibb.co.com/hZ1J4LC/m9035-black-01-500x500.jpg",
         "category_name": "Smart Watches",
         "price": 399.99,

@@ -10,7 +10,7 @@ import UserContext from '../context/UserContext';
 
 // eslint-disable-next-line react/prop-types
 const ProductDetails = () => {
-    const { handleCart,handleWishlist,handleInCart,isInCart } = useContext(UserContext);
+    const { handleCart,handleWishlist,handleInCart,isInCart,purchaseBtn,handlePurchaseBtnStatus } = useContext(UserContext);
     const { product_id } = useParams();
     // console.log("our category:", product_category, product_id);
     const products = useLoaderData();
@@ -33,6 +33,7 @@ const ProductDetails = () => {
         setStoredCartList(product_id);
         handleInCart(product_id);
         handleCart();
+        handlePurchaseBtnStatus(1);
     }
     // handle add to wishlist
     const handleAddToWishList = () => {

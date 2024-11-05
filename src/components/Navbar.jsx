@@ -52,7 +52,7 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <Link className={`text-xl font-bold  ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}>Gadget Heaven</Link>
+                <Link to="/" className={`text-xl font-bold  ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}>Gadget Heaven</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className={`menu menu-horizontal px-1 gap-3 ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}>
@@ -83,6 +83,15 @@ const Navbar = () => {
                         // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
                         className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                     >Dashboard</NavLink></li>
+                    <li><NavLink to="/purchase-history"
+                        // className={({ isActive }) =>{
+                        //      isActive ? "border-b-2" : "";
+                        //      location.pathname==="/"? "border-white":""
+                        //     }
+                        // }
+                        // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
+                        className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
+                    >Purchase History</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end gap-3">

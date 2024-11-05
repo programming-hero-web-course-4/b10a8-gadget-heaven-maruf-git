@@ -14,7 +14,7 @@ const Cart = () => {
     const [cartList, setCartList] = useState([]);
     const [cost, setCost] = useState(0);
     // cart count functionality
-    const { handleCart } = useContext(UserContext);
+    const { handleCart, purchaseBtn, handlePurchaseBtnStatus, handlePurchaseHistory } = useContext(UserContext);
     useEffect(() => {
         const storedCartList = getStoredCartList();
         const newCartList = products.filter(product => storedCartList.includes(product.product_id))
@@ -47,16 +47,26 @@ const Cart = () => {
         newCost = newCost.toFixed(2);
         setCost(newCost);
         handleCart();
+        handlePurchaseBtnStatus(cost);
         // setIsInCart(false);
     }
     // handle purchase
     const handlePurchase = () => {
-        if (cartList.length)
+        if (cartList.length) {
+            // for purchase history page
+            const storedCartList = getStoredCartList();
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time= now.toLocaleTimeString();
+
+            handlePurchaseHistory(storedCartList, cost, date,time);
+            // for modal
             document.getElementById('my_modal_1').showModal();
-        else document.getElementById('my_modal_2').showModal();
+        }
         localStorage.removeItem("cart-list");
         setCartList([]);
         handleCart();
+        handlePurchaseBtnStatus(cost);
     }
 
     return (
@@ -67,6 +77,7 @@ const Cart = () => {
                     <h1 className="font-bold text-2xl" >Total Cost: {cost} $</h1>
                     <button onClick={handleSort} className="btn w-[150px] rounded-full bg-white border-[rgb(149,56,226)] text-[rgb(149,56,226)]">Sort by Price <GiSettingsKnobs className="font-bold text-xl" /></button>
                     <button
+                        disabled={purchaseBtn}
                         onClick={handlePurchase}
                         className="btn rounded-full w-[150px] bg-[rgb(149,56,226)] text-white">
                         Purchase</button>

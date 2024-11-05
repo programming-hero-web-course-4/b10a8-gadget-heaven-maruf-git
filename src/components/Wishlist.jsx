@@ -10,7 +10,7 @@ const Wishlist = () => {
     const products = useLoaderData();
     const [wishList, setWishList] = useState([]);
     // wishlist count functionality
-    const { handleWishlist,handleCart} = useContext(UserContext);
+    const { handleWishlist,handleCart,handlePurchaseBtnStatus } = useContext(UserContext);
     useEffect(() => {
         const storedWishList = getStoredWishList();
         const newWishList = products.filter(product => storedWishList.includes(product.product_id))
@@ -24,12 +24,15 @@ const Wishlist = () => {
         const newWishList = products.filter(product => storedWishList.includes(product.product_id))
         setWishList(newWishList);
         handleWishlist();
+      
     }
     // handle add to cart
     const handleAddToCart = (product_id) => {
         setStoredCartList(product_id);
         // handleInCart(product_id);
         handleCart();
+        console.log("calling purchase from wishlist");
+        handlePurchaseBtnStatus(1);
     }
 
     return (
