@@ -10,26 +10,28 @@ import UserContext from '../context/UserContext';
 
 // eslint-disable-next-line react/prop-types
 const ProductDetails = () => {
-    const { handleCart,handleWishlist } = useContext(UserContext);
+    const { handleCart,handleWishlist,handleInCart,isInCart } = useContext(UserContext);
     const { product_id } = useParams();
     // console.log("our category:", product_category, product_id);
     const products = useLoaderData();
     const [product, setProduct] = useState({});
+   
+
     useEffect(() => {
         const newProduct = products.find((product) => product.product_id === product_id);
         setProduct(newProduct);
-    }, [product_id, products])
-    // console.log("details of product:",product);
-    const { product_title, rating, availability, specification, description, price, product_image } = product;
-    // console.log("specs: ", specification);
-    console.log(rating);
-    const num = 4.5;
-    console.log("num is: ", num, typeof num);
-    console.log("rating is: ", rating, typeof rating);
+        handleInCart(product_id);
+        // handle product in cart or not to disable cart button
+       
+    }, [product_id, products,handleInCart])
 
+    const { product_title, rating, availability, specification, description, price, product_image } = product;
+  
+    
     // handle add to cart
     const handleAddToCart = () => {
         setStoredCartList(product_id);
+        handleInCart(product_id);
         handleCart();
     }
     // handle add to wishlist
@@ -80,7 +82,9 @@ const ProductDetails = () => {
                                     <p>{rating}</p>
                                 </div>
                                 <div className="flex gap-3 items-center">
-                                    <button onClick={handleAddToCart} className="w-[150px] btn rounded-full bg-[rgb(149,56,226)] text-white hover:text-[rgb(149,56,226)] hover:bg-white">Add to Cart <IoCartOutline className="text-xl font-bold" /></button>
+                                    <button onClick={handleAddToCart} 
+                                    disabled={isInCart}
+                                    className={`w-[150px] btn rounded-full bg-[rgb(149,56,226)] text-white hover:text-[rgb(149,56,226)] hover:bg-white`}>Add to Cart <IoCartOutline className="text-xl font-bold" /></button>
                                     <Link onClick={handleAddToWishList} className=""><FcLike className="p-3 border-[3px] hover:border-red-500 rounded-full  text-5xl" /></Link>
 
                                 </div>

@@ -12,7 +12,7 @@ const Cart = () => {
     const [cartList, setCartList] = useState([]);
     const [cost, setCost] = useState(0);
     // cart count functionality
-    const { handleCart} = useContext(UserContext);
+    const { handleCart, setIsInCart } = useContext(UserContext);
     useEffect(() => {
         const storedCartList = getStoredCartList();
         const newCartList = products.filter(product => storedCartList.includes(product.product_id))
@@ -45,6 +45,7 @@ const Cart = () => {
         newCost = newCost.toFixed(2);
         setCost(newCost);
         handleCart();
+        // setIsInCart(false);
     }
 
     return (
