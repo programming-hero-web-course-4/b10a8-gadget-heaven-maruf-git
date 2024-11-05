@@ -15,7 +15,7 @@ const Home = () => {
                 {/* total category and products container */}
                 <div className="flex flex-col lg:flex-row gap-10">
                     {/* role="tablist" */}
-                    <div className=" mb-10 flex flex-col md:w-full lg:w-[20%] border border-black items-center p-10 rounded-xl gap-5 max-h-[400px]">
+                    <div className=" mb-10 flex flex-col md:w-full lg:w-[20%] border border-black items-center p-10 rounded-xl gap-5 max-h-[460px]">
                         <NavLink
                             // role="tab"
                             // "btn bg-green-400  justify-start rounded-full w-[200px] font-semibold text-left" : " btn justify-start rounded-full  font-semibold w-[200px] text-left"

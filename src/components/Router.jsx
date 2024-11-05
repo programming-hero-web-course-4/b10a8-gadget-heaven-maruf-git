@@ -18,7 +18,7 @@ import PurchaseHistory from "../pages/PurchaseHistory";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div >
+        element: <div className="bg-[rgb(246,246,246)]">
             {/* <Navbar></Navbar> */}
             <Root></Root>
             <Footer></Footer>
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/:product_category/:product_id",
-        element: <div className="mt-5">
+        element: <div className="">
             <Navbar></Navbar>
             <ProductDetails></ProductDetails>
             <Footer></Footer>
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/purchase-history",
-        element: <div className="mt-5">
+        element: <div className="mt-5 bg-[rgb(246,246,246)]">
             <Navbar></Navbar>
             <PurchaseHistory></PurchaseHistory>
             <Footer></Footer>

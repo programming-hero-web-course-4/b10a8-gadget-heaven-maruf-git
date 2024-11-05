@@ -9,7 +9,7 @@ const Product = ({product}) => {
  
     return (
         <div>
-            <div className="p-5 border rounded-xl shadow-md space-y-3">
+            <div className="p-5 border rounded-xl shadow-md space-y-3 bg-white">
                 <div className="">
                     <img className="h-[260px] object-cover w-full" src={product_image} alt="" />
                 </div>

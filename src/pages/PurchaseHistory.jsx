@@ -16,7 +16,7 @@ const PurchaseHistory = () => {
                 </div>
             </div>
             <div className="max-w-screen-xl mx-auto">
-                <div className="border border-red-400">
+                <div className="">
                     {/* for each history */}
                     {
                         purchaseHistories.map((purchaseHistory, idx) => <History key={idx} purchaseHistory={purchaseHistory} ></History>)
