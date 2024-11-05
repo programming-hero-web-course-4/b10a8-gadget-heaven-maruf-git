@@ -1,15 +1,16 @@
 
-import { getStoredWishList, removeFromStoredWishList } from "../utils/addToDb";
+import { getStoredWishList, removeFromStoredWishList, setStoredCartList } from "../utils/addToDb";
 import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
 import UserContext from "../context/UserContext";
+import { IoCartOutline } from "react-icons/io5";
 
 const Wishlist = () => {
     const products = useLoaderData();
     const [wishList, setWishList] = useState([]);
     // wishlist count functionality
-    const { handleWishlist} = useContext(UserContext);
+    const { handleWishlist,handleCart} = useContext(UserContext);
     useEffect(() => {
         const storedWishList = getStoredWishList();
         const newWishList = products.filter(product => storedWishList.includes(product.product_id))
@@ -23,6 +24,12 @@ const Wishlist = () => {
         const newWishList = products.filter(product => storedWishList.includes(product.product_id))
         setWishList(newWishList);
         handleWishlist();
+    }
+    // handle add to cart
+    const handleAddToCart = (product_id) => {
+        setStoredCartList(product_id);
+        // handleInCart(product_id);
+        handleCart();
     }
 
     return (
@@ -47,6 +54,9 @@ const Wishlist = () => {
 
                                     <p className="text-[rgba(9,8,15,0.6)] text-lg">{item.description}</p>
                                     <p className="font-semibold text-xl text-[rgba(9,8,15,0.8)]">Price: ${item.price}</p>
+                                    <button  
+                                    onClick={()=>{handleAddToCart(item.product_id)}}
+                                    className={`w-[150px] btn rounded-full bg-[rgb(149,56,226)] text-white hover:text-[rgb(149,56,226)] hover:bg-white`}>Add to Cart <IoCartOutline className="text-xl font-bold" /></button>
                                 </div>
                             </div>
 

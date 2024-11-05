@@ -48,6 +48,10 @@ const Cart = () => {
         // setIsInCart(false);
     }
 
+    const handlePurchase = () => {
+        // toast.success("")
+    }
+
     return (
         <div className="my-5">
             <div className="flex justify-between items-center py-5">
@@ -55,7 +59,10 @@ const Cart = () => {
                 <div className="flex gap-5 items-center">
                     <h1 className="font-bold text-2xl" >Total Cost: {cost} $</h1>
                     <button onClick={handleSort} className="btn w-[150px] rounded-full bg-white border-[rgb(149,56,226)] text-[rgb(149,56,226)]">Sort by Price <GiSettingsKnobs className="font-bold text-xl" /></button>
-                    <button className="btn rounded-full w-[150px] bg-[rgb(149,56,226)] text-white">Purchase</button>
+                    <button
+                        onClick={handlePurchase}
+                        className="btn rounded-full w-[150px] bg-[rgb(149,56,226)] text-white">
+                        Purchase</button>
                 </div>
             </div>
             <div className="min-h-[50px] border border-red-600 space-y-5">
