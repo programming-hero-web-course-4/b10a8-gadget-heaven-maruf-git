@@ -15,11 +15,17 @@ const PurchaseHistory = () => {
                     <p>Explore the latest gadgets that will take your experience to the next level. From smart devices<br />to the coolest accessories, we have it all!</p>
                 </div>
             </div>
-            <div className="max-w-screen-xl mx-auto">
+            <div className="max-w-screen-xl mx-auto ">
                 <div className="">
                     {/* for each history */}
                     {
-                        purchaseHistories.map((purchaseHistory, idx) => <History key={idx} purchaseHistory={purchaseHistory} ></History>)
+                        (purchaseHistories.length) ?
+                            purchaseHistories.map((purchaseHistory, idx) => <History key={idx} purchaseHistory={purchaseHistory} ></History>)
+                            :
+                            <div className="mt-10 min-h-[30vh] flex flex-col items-center justify-center gap-1">
+                                <h1 className="text-2xl font-bold">No Previous Purchase History</h1>
+                                <p className="">Please Purchase Some Products</p>
+                                </div>
                     }
                 </div>
 

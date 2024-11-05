@@ -21,9 +21,6 @@ const History = ({ purchaseHistory }) => {
                 <h1 className="font-semibold btn rounded-full bg-[rgb(149,56,226)] text-white" >Total Cost: {cost}$</h1>
                 <h1 className="font-semibold btn rounded-full bg-[rgb(149,56,226)] text-white" >Product Count: {purchasedItemsId.length}</h1>
                 <h1 className="font-semibold btn rounded-full bg-[rgb(149,56,226)] text-white">Date: {date}, {time}</h1>
-                {/* <h1 className="font-semibold btn rounded-full text-[rgb(149,56,226)]  border-[rgb(149,56,226)]" >Total Cost: {cost}$</h1>
-                <h1 className="font-semibold btn rounded-full text-[rgb(149,56,226)]  border-[rgb(149,56,226)]" >Product Count: {purchasedItemsId.length}</h1>
-                <h1 className="font-semibold btn rounded-full text-[rgb(149,56,226)]  border-[rgb(149,56,226)]">Date: {date}, {time}</h1> */}
             </div>
             {/* product cards */}
             <div className="grid  grid-cols-3 gap-5 w-full ">
