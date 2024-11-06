@@ -27,7 +27,7 @@ const CategoryProducts = () => {
                     {
                         products.map((product) => <Product key={product.product_id} product={product}></Product>)
                     }
-                </div> : <div className="text-center text-3xl font-bold"> No products Available</div>
+                </div> : <div className="text-center text-3xl font-bold flex items-center justify-center min-h-[460px]"> No Products Currently Available</div>
             }
         </div>
 
