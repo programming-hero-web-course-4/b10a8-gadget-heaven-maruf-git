@@ -1,7 +1,7 @@
 // import React from 'react';
 import { GiSettingsKnobs } from "react-icons/gi";
 import { getStoredCartList, removeFromStoredCartList } from "../utils/addToDb";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
 import UserContext from "../context/UserContext";
@@ -14,6 +14,7 @@ const Cart = () => {
     const products = useLoaderData();
     const [cartList, setCartList] = useState([]);
     const [cost, setCost] = useState(0);
+    const modalRef = useRef();
     // cart count functionality
     const { handleCart, purchaseBtn, handlePurchaseBtnStatus, handlePurchaseHistory } = useContext(UserContext);
     useEffect(() => {
@@ -61,8 +62,9 @@ const Cart = () => {
             const time= now.toLocaleTimeString();
 
             handlePurchaseHistory(storedCartList, cost, date,time);
-            document.getElementById('my_modal_1').showModal();
-            // setCost(0);
+            modalRef.current.showModal();
+            modalRef.current.querySelector(".price").innerText = cost;
+            setCost(0);
             // for modal
         }
         localStorage.removeItem("cart-list");
@@ -111,7 +113,8 @@ const Cart = () => {
             {/* modal */}
             <div>
                 {/* <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button> */}
-                <dialog id="my_modal_1" className="modal">
+    
+                <dialog ref ={modalRef} id="my_modal_1" className="modal">
                     <div className="modal-box">
 
                         <div className="py-3 flex flex-col justify-center items-center gap-3">
@@ -122,7 +125,7 @@ const Cart = () => {
                                 <path d="M31.3659 43.6256L27.0584 39.0429C25.9303 37.8425 25.9886 35.9552 27.1885 34.8271C28.3885 33.6976 30.2766 33.7582 31.4037 34.9577L33.46 37.1444L42.2002 27.1547C43.2836 25.915 45.168 25.7893 46.4087 26.8742C47.6485 27.9591 47.7736 29.8429 46.6893 31.0827L35.7831 43.547C34.6212 44.8735 32.5708 44.9082 31.3659 43.6256Z" fill="white" />
                             </svg>
                             <h3 className="font-bold text-xl mt-3">Payment Successfully</h3>
-                            <p className="text-center mb-3 mt-1 text-lg">Thanks for Purchasing.<br />Total: {cost}$</p>
+                            <p className="text-center mb-3 mt-1 text-lg">Thanks for Purchasing.<br />Total: <span className="price"></span> $</p>
                             <button className="btn w-full" onClick={() => { navigate("/") }}>Close</button>
                         </div>
                         {/* <div className="modal-action"> */}
