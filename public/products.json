@@ -1,5 +1,21 @@
 [
     {
+        "product_id": "P001",
+        "product_title": "Samsung Galaxy S23",
+        "product_image": "https://i.ibb.co.com/hsGrPqh/galaxy-s23-ultra-green-01-500x500.jpg",
+        "category_name": "Phones",
+        "price": 1599.99,
+        "description": "Latest 5G smartphone with high-resolution camera and fast charging support.",
+        "specification": [
+            "Snapdragon 888",
+            "128GB storage",
+            "48MP camera",
+            "5G-enabled"
+        ],
+        "availability": true,
+        "rating": 4.5
+    },
+    {
         "product_id": "L001",
         "product_title": "Apple MacBook Pro 16",
         "product_image": "https://i.ibb.co.com/RhsqBZK/macbook-pro-16-inch-m3-pro-black-01-500x500.jpg",
@@ -15,6 +31,7 @@
         "availability": true,
         "rating": 4.7
     },
+  
     {
         "product_id": "L002",
         "product_title": "Asus TUF Gaming A15",
@@ -30,6 +47,22 @@
         ],
         "availability": false,
         "rating": 4.8
+    },
+    {
+        "product_id": "P002",
+        "product_title": "Honor X9b 5G",
+        "product_image": "https://i.ibb.co.com/cy8Qp7d/x9b-5g-03-500x500.jpg",
+        "category_name": "Phones",
+        "price": 499.99,
+        "description": "Affordable smartphone with essential features and solid battery life.",
+        "specification": [
+            "MediaTek Helio",
+            "64GB storage",
+            "13MP camera",
+            "4000mAh battery"
+        ],
+        "availability": true,
+        "rating": 4.2
     },
     {
         "product_id": "L003",
@@ -96,36 +129,20 @@
         "rating": 4.9
     },
     {
-        "product_id": "P001",
-        "product_title": "Samsung Galaxy S23",
-        "product_image": "https://i.ibb.co.com/hsGrPqh/galaxy-s23-ultra-green-01-500x500.jpg",
-        "category_name": "Phones",
-        "price": 1599.99,
-        "description": "Latest 5G smartphone with high-resolution camera and fast charging support.",
+        "product_id": "S001",
+        "product_title": "Zeblaze Swim GPS",
+        "product_image": "https://i.ibb.co.com/t4RDdj1/swim-01-500x500.jpg",
+        "category_name": "Smart Watches",
+        "price": 149.99,
+        "description": "Lightweight fitness smartwatch with activity tracking and heart rate monitor.",
         "specification": [
-            "Snapdragon 888",
-            "128GB storage",
-            "48MP camera",
-            "5G-enabled"
+            "Heart rate monitor",
+            "GPS",
+            "Sleep tracking",
+            "Water-resistant"
         ],
         "availability": true,
-        "rating": 4.5
-    },
-    {
-        "product_id": "P002",
-        "product_title": "Honor X9b 5G",
-        "product_image": "https://i.ibb.co.com/cy8Qp7d/x9b-5g-03-500x500.jpg",
-        "category_name": "Phones",
-        "price": 499.99,
-        "description": "Affordable smartphone with essential features and solid battery life.",
-        "specification": [
-            "MediaTek Helio",
-            "64GB storage",
-            "13MP camera",
-            "4000mAh battery"
-        ],
-        "availability": true,
-        "rating": 4.2
+        "rating": 4.6
     },
     {
         "product_id": "P003",
@@ -158,22 +175,6 @@
         ],
         "availability": false,
         "rating": 4.8
-    },
-    {
-        "product_id": "S001",
-        "product_title": "Zeblaze Swim GPS",
-        "product_image": "https://i.ibb.co.com/t4RDdj1/swim-01-500x500.jpg",
-        "category_name": "Smart Watches",
-        "price": 149.99,
-        "description": "Lightweight fitness smartwatch with activity tracking and heart rate monitor.",
-        "specification": [
-            "Heart rate monitor",
-            "GPS",
-            "Sleep tracking",
-            "Water-resistant"
-        ],
-        "availability": true,
-        "rating": 4.6
     },
     {
         "product_id": "S002",
