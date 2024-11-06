@@ -42,11 +42,11 @@ const router = createBrowserRouter([
     {
         path: "/statistics",
         element: <div className="mt-5">
-           
             <Navbar></Navbar>
             <Statistics></Statistics>
             <Footer></Footer>
-        </div>
+        </div>,
+        errorElement: <ErrorPage></ErrorPage>,
     },
     {
         path: "/dashboard",
@@ -55,15 +55,18 @@ const router = createBrowserRouter([
             <Dashboard></Dashboard>
             <Footer></Footer>
         </div>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/dashboard",
                 element: <Cart></Cart>,
+                errorElement: <ErrorPage></ErrorPage>,
                 loader: ()=>fetch("/products.json")
             },
             {
                 path:"/dashboard/wishlist",
                 element: <Wishlist></Wishlist>,
+                errorElement: <ErrorPage></ErrorPage>,
                 loader: ()=>fetch("/products.json")
             }
 
@@ -71,11 +74,12 @@ const router = createBrowserRouter([
     },
     {
         path: "/:product_category/:product_id",
-        element: <div className="">
+        element: <div className="mt-5">
             <Navbar></Navbar>
             <ProductDetails></ProductDetails>
             <Footer></Footer>
         </div>,
+        errorElement: <ErrorPage></ErrorPage>,
         loader: () => fetch("/products.json")
     },
     {
@@ -85,6 +89,7 @@ const router = createBrowserRouter([
             <PurchaseHistory></PurchaseHistory>
             <Footer></Footer>
         </div>,
+        errorElement: <ErrorPage></ErrorPage>,
         loader: () => fetch("/products.json")
     }
 
