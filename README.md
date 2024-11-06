@@ -16,8 +16,7 @@ https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assi
 <li>Context API</li>
 </ul>
 
-
-## Handling and Managing data
+## Handling and Managing Data
 To handle and manage data, I have used both the local storage and context API. I have saved cart and wishlist data to the local storage and used context API to update cart and wishlist product count. To manage the purchase history I have used the context API only.
 
 ## Website Features
@@ -26,6 +25,7 @@ To handle and manage data, I have used both the local storage and context API. I
 <li>Categorized Product Filter</li>
 <li>Individual Product Details Pages</li>
 <li>View and Manage Cart and Wishlist</li>
+<li>Dynamic Update of Cart and Wishlist Product Count</li>
 <li>Sort Products by Price</li>
 <li>Purchase History</li>
 <li>Attractive and Meaningful Notifications of User Activity</li>
