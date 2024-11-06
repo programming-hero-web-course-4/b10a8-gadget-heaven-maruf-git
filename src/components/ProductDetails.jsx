@@ -50,14 +50,15 @@ const ProductDetails = () => {
             <Helmet>
                 <title>{product_title}</title>
             </Helmet>
-            <div className="relative">
+            <div className="relative bg-[rgb(246,246,246)]">
                 <div className="bg-[rgb(149,56,226)] text-center text-white py-10 pb-44">
                     <h1 className="text-3xl font-bold mb-3">Product Details</h1>
                     <p>Explore the latest gadgets that will take your experience to<br />the next level. From smart devices to the coolest accessories, we have it all!</p>
                 </div>
-                <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center border border-green-400 mb-[280px] mt-20">
-                    <div className=" border border-red-500 bottom-[-280px] w-[60%] mx-auto rounded-xl p-4 absolute bg-white">
-                        <div className="border border-cyan-400 flex gap-5">
+                {/* mb-[280px] mt-20 */}
+                <div className="max-w-screen-xl mx-auto flex flex-col justify-center items-center border  min-h-[460px] bg-red-400]">
+                    <div className="shadow-sm border bottom-[130px] w-[60%] mx-auto rounded-xl p-4 absolute bg-white">
+                        <div className="flex gap-5">
                             <div className="w-[40%]">
                                 <img className="" src={product_image} alt="" />
                             </div>
@@ -106,7 +107,6 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </div>
-
         </div >
 
     );
