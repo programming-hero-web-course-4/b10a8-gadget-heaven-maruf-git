@@ -77,7 +77,7 @@ const Cart = () => {
                 <h1 className="font-bold text-2xl">Cart</h1>
                 <div className="flex gap-5 items-center">
                     <h1 className="font-bold text-2xl" >Total Cost: {cost} $</h1>
-                    <button onClick={handleSort} className="btn w-[150px] rounded-full bg-white border-[rgb(149,56,226)] text-[rgb(149,56,226)]">Sort by Price <GiSettingsKnobs className="font-bold text-xl" /></button>
+                    <button onClick={handleSort} className="btn rounded-full bg-white border-[rgb(149,56,226)] text-[rgb(149,56,226)] ">Sort by Price <GiSettingsKnobs className="font-bold text-xl" /></button>
                     <button
                         disabled={purchaseBtn}
                         onClick={handlePurchase}
