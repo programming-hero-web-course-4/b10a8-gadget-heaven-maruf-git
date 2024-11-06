@@ -8,6 +8,7 @@ const UserContextProvider = ({ children }) => {
     const [cartCount, setCartCount] = useState(0);
     const [wishlistCount, setWishlistCount] = useState(0);
     const [isInCart, setIsInCart] = useState(false);
+    const [isInWishlist, setIsInWishlist] = useState(false);
     const [purchaseBtn, setPurchaseBtn] = useState(true);
     
     // for purchase history page
@@ -42,6 +43,21 @@ const UserContextProvider = ({ children }) => {
             setIsInCart(false);
         }
     }
+    // handle already in wishlist
+    const handleInWishlist =(productId)=>{
+        const wishlistItems = getStoredWishList();
+        const findResult = wishlistItems.find(itemId => itemId === productId);
+        console.log("btn wishlist:",wishlistItems);
+        console.log("add to wishlist:",productId);
+        if(findResult){
+            setIsInWishlist(true);
+            console.log("btn disabled");
+        }
+        else{
+            setIsInWishlist(false);
+            console.log("btn enabled");
+        }
+    }
     // handle purchase button status
     const handlePurchaseBtnStatus = (price) => {
         const cartItems = getStoredCartList();
@@ -68,7 +84,7 @@ const UserContextProvider = ({ children }) => {
     console.log('real history:',purchaseHistories);
 
     return (
-        <UserContext.Provider value={{ user, setUser, cartCount, setCartCount, handleCart, wishlistCount, setWishlistCount, handleWishlist, isInCart, handleInCart, setIsInCart, purchaseBtn, setPurchaseBtn, handlePurchaseBtnStatus, handlePurchaseHistory, purchaseHistories, setPurchaseHistories }} >
+        <UserContext.Provider value={{ user, setUser, cartCount, setCartCount, handleCart, wishlistCount, setWishlistCount, handleWishlist, isInCart, handleInCart, setIsInCart, purchaseBtn, setPurchaseBtn, handlePurchaseBtnStatus, handlePurchaseHistory, purchaseHistories, setPurchaseHistories,handleInWishlist,isInWishlist }} >
             {children}
         </UserContext.Provider>
     )

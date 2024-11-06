@@ -10,27 +10,29 @@ import UserContext from '../context/UserContext';
 
 // eslint-disable-next-line react/prop-types
 const ProductDetails = () => {
-    const { handleCart,handleWishlist,handleInCart,isInCart,purchaseBtn,handlePurchaseBtnStatus } = useContext(UserContext);
+    const { handleCart, handleWishlist, handleInCart, isInCart, purchaseBtn, handlePurchaseBtnStatus, handleInWishlist, isInWishlist } = useContext(UserContext);
     const { product_id } = useParams();
     // console.log("our category:", product_category, product_id);
     const products = useLoaderData();
     const [product, setProduct] = useState({});
-   
+
 
     useEffect(() => {
         const newProduct = products.find((product) => product.product_id === product_id);
         setProduct(newProduct);
         handleInCart(product_id);
+        handleInWishlist(product_id);
         // handle product in cart or not to disable cart button
-       
-    }, [product_id, products,handleInCart])
+
+    }, [product_id, products, handleInCart, handleInWishlist])
 
     const { product_title, rating, availability, specification, description, price, product_image } = product;
-  
-    
+
+
     // handle add to cart
     const handleAddToCart = () => {
         setStoredCartList(product_id);
+         // for add to cart button toggle
         handleInCart(product_id);
         handleCart();
         handlePurchaseBtnStatus(1);
@@ -38,6 +40,8 @@ const ProductDetails = () => {
     // handle add to wishlist
     const handleAddToWishList = () => {
         setStoredWishList(product_id);
+        // for wishlist button toggle
+        handleInWishlist(product_id);
         handleWishlist();
     }
     return (
@@ -83,10 +87,15 @@ const ProductDetails = () => {
                                     <p>{rating}</p>
                                 </div>
                                 <div className="flex gap-3 items-center">
-                                    <button onClick={handleAddToCart} 
-                                    disabled={isInCart}
-                                    className={`w-[150px] btn rounded-full bg-[rgb(149,56,226)] text-white hover:text-[rgb(149,56,226)] hover:bg-white`}>Add to Cart <IoCartOutline className="text-xl font-bold" /></button>
-                                    <Link onClick={handleAddToWishList} className=""><FcLike className="p-3 border-[3px] hover:border-red-500 rounded-full  text-5xl" /></Link>
+                                    <button onClick={handleAddToCart}
+                                        disabled={isInCart}
+                                        className={`w-[150px] btn rounded-full bg-[rgb(149,56,226)] text-white hover:text-[rgb(149,56,226)] hover:bg-white`}>Add to Cart <IoCartOutline className="text-xl font-bold" />
+                                        </button>
+
+                                    <button onClick={handleAddToWishList}
+                                        disabled={isInWishlist}
+                                        className=""><FcLike className="p-3 border-[3px] hover:border-red-500 rounded-full  text-5xl" />
+                                        </button>
 
                                 </div>
                             </div>
@@ -95,7 +104,7 @@ const ProductDetails = () => {
                 </div>
             </div>
 
-        </div>
+        </div >
 
     );
 };
