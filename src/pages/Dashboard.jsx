@@ -6,7 +6,7 @@ const Dashboard = () => {
     const location = useLocation();
     const { pathname } = location;
     return (
-        <div className=" ">
+        <div className=" bg-[rgb(246,246,246)] pb-10">
             <Helmet>
                 <title>Dashboard</title>
             </Helmet>
@@ -25,8 +25,8 @@ const Dashboard = () => {
                 </div>
             </div>
        
-                <div className="bg-[rgb(246,246,246)] mb-28">
-                    <div className="max-w-screen-xl mx-auto min-h-[100vh]">
+                <div className=" mb-28">
+                    <div className="max-w-screen-xl mx-auto">
                         <Outlet></Outlet>
                     </div>
                 </div>

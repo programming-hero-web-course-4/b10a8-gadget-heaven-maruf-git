@@ -85,7 +85,7 @@ const Cart = () => {
                         Purchase</button>
                 </div>
             </div>
-            <div className="min-h-[50px] border border-red-600 space-y-5">
+            <div className="space-y-5">
                 {
                     cartList.map(item => <div
                         key={item.product_id}

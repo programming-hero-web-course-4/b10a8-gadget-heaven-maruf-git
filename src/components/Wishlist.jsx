@@ -45,7 +45,7 @@ const Wishlist = () => {
                 <div className="py-5">
                     <h1 className="font-bold text-2xl">Wishlist</h1>
                 </div>
-                <div className="min-h-[50px] border border-red-600 space-y-5">
+                <div className="space-y-5">
                     {
                         wishList.map(item => <div
                             key={item.product_id}

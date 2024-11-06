@@ -99,7 +99,7 @@ const ProductDetails = () => {
 
                                     <button onClick={handleAddToWishList}
                                         disabled={isInWishlist}
-                                        className="border-[2px] border-red-400 hover:bg-[rgb(149,56,226)]  hover:border-[rgb(149,56,226)] disabled:border-red-400 disabled:hover:bg-transparent rounded-full"><FcLike size={40} className="p-2  rounded-full  text-5xl" />
+                                        className="border-[2px] border-gray-400 hover:bg-[rgb(149,56,226)]  hover:border-[rgb(149,56,226)] disabled:border-gray-400  disabled:hover:bg-transparent rounded-full"><FcLike size={40} className="p-2  rounded-full  text-5xl" />
                                         </button>
                                 </div>
                             </div>

@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <div className="mt-5 bg-[rgb(246,246,246)]">
+        element: <div className="mt-5">
             <Navbar></Navbar>
             <Dashboard></Dashboard>
             <Footer></Footer>
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/purchase-history",
-        element: <div className="mt-5 bg-[rgb(246,246,246)]">
+        element: <div className="mt-5">
             <Navbar></Navbar>
             <PurchaseHistory></PurchaseHistory>
             <Footer></Footer>
