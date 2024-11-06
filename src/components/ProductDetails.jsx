@@ -6,6 +6,7 @@ import { FcLike } from "react-icons/fc";
 import { IoCartOutline } from "react-icons/io5";
 import { setStoredCartList, setStoredWishList } from '../utils/addToDb';
 import UserContext from '../context/UserContext';
+import { Helmet } from 'react-helmet-async';
 
 
 // eslint-disable-next-line react/prop-types
@@ -46,6 +47,9 @@ const ProductDetails = () => {
     }
     return (
         <div >
+            <Helmet>
+                <title>{product_title}</title>
+            </Helmet>
             <div className="relative">
                 <div className="bg-[rgb(149,56,226)] text-center text-white py-10 pb-44">
                     <h1 className="text-3xl font-bold mb-3">Product Details</h1>

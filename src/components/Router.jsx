@@ -13,6 +13,7 @@ import ProductDetails from "./ProductDetails";
 import Cart from "./Cart";
 import Wishlist from "./Wishlist";
 import PurchaseHistory from "../pages/PurchaseHistory";
+import { Helmet } from "react-helmet-async";
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,7 @@ const router = createBrowserRouter([
     {
         path: "/statistics",
         element: <div className="mt-5">
+           
             <Navbar></Navbar>
             <Statistics></Statistics>
             <Footer></Footer>

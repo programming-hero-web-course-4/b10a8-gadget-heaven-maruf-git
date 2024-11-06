@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import UserContext from "../context/UserContext";
 import History from "../components/History";
+import { Helmet } from "react-helmet-async";
 
 
 const PurchaseHistory = () => {
@@ -9,6 +10,9 @@ const PurchaseHistory = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Purchase History</title>
+            </Helmet>
             <div className="bg-[rgb(149,56,226)] py-10 ">
                 <div className="text-center text-white">
                     <h1 className="text-3xl font-bold mb-3">Purchase History</h1>

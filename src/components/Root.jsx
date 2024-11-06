@@ -2,7 +2,7 @@
 import Heading from "./Heading";
 import Navbar from "./Navbar";
 import bannerImg from "../assets/banner.jpg"
-
+import { Helmet } from 'react-helmet-async';
 // import { Outlet } from "react-router-dom";
 import Home from "../pages/Home";
 
@@ -10,6 +10,9 @@ const Root = () => {
     return (
 
         <div>
+            <Helmet>
+                <title>Gadget Heaven</title>
+            </Helmet>
             <div className="relative">
                 <div className="mt-5 max-w-[1480px] mx-auto px-10 rounded-xl bg-[rgb(149,56,226)] pb-44 ">
                     <div className="max-w-screen-xl mx-auto pb-10">

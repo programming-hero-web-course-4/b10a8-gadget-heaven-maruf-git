@@ -8,6 +8,7 @@ import UserContext from "../context/UserContext";
 import { MdSmsFailed } from "react-icons/md";
 
 
+
 const Cart = () => {
     const navigate = useNavigate();
     const products = useLoaderData();
@@ -71,6 +72,7 @@ const Cart = () => {
 
     return (
         <div className="my-5">
+            
             <div className="flex justify-between items-center py-5">
                 <h1 className="font-bold text-2xl">Cart</h1>
                 <div className="flex gap-5 items-center">

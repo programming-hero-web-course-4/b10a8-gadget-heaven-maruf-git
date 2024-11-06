@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { RxCrossCircled } from "react-icons/rx";
 import UserContext from "../context/UserContext";
 import { IoCartOutline } from "react-icons/io5";
+import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
     const products = useLoaderData();
@@ -38,6 +39,9 @@ const Wishlist = () => {
     return (
         <div>
             <div className="my-5">
+            <Helmet>
+                <title>Dashboard || Wishlist</title>
+            </Helmet>
                 <div className="py-5">
                     <h1 className="font-bold text-2xl">Wishlist</h1>
                 </div>

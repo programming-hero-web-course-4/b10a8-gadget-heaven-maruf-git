@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 
 
@@ -6,6 +7,9 @@ const Dashboard = () => {
     const { pathname } = location;
     return (
         <div className=" ">
+            <Helmet>
+                <title>Dashboard</title>
+            </Helmet>
             <div className="bg-[rgb(149,56,226)] py-10 ">
                 <div className="text-center text-white">
                     <h1 className="text-3xl font-bold mb-3">Dashboard</h1>

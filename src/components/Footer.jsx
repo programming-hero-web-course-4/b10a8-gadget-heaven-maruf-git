@@ -1,13 +1,11 @@
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 ">
-            <nav className="grid grid-flow-col gap-4">
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
-            </nav>
+        <footer className="footer footer-center bg-white text-base-content rounded p-10 ">
+            <div>
+                <h1>Gadget Heaven</h1>
+                <p>Leading the way in cutting-edge technology and innovation.</p>
+            </div>
             <nav>
                 <div className="grid grid-flow-col gap-4">
                     <a>

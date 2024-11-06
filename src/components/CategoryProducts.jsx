@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Product from './Product';
+import { Helmet } from 'react-helmet-async';
 
 const CategoryProducts = () => {
     const { category_name } = useParams();
@@ -14,17 +15,20 @@ const CategoryProducts = () => {
         setProducts(categoryProducts);
     }, [allProduct, category_name])
     // console.log("products by category:",products);
-    
+
     return (
         <div>
+            <Helmet>
+                <title>Gadget Heaven || {category_name}</title>
+            </Helmet>
             {
                 products.length ? <div className="grid  grid-cols-3 gap-5">
+
                     {
                         products.map((product) => <Product key={product.product_id} product={product}></Product>)
                     }
                 </div> : <div className="text-center text-3xl font-bold"> No products Available</div>
             }
-
         </div>
 
     );

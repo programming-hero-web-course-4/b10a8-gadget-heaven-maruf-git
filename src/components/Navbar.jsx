@@ -59,37 +59,18 @@ const Navbar = () => {
                     <li>
                         <NavLink
                             to="/"
-                            // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
                             className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                         >
                             Home
                         </NavLink>
                     </li>
                     <li><NavLink to="/statistics"
-                        // className={({ isActive }) =>{
-                        //      isActive ? "border-b-2" : "";
-                        //      location.pathname==="/"? "border-white":""
-                        //     }
-                        // }
-                        // className={({ isActive }) =>isActive ? "border-none border-b-2 border-red-500 text-green-400 text-3xl" : ""}
                         className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                     >Statistics</NavLink></li>
                     <li><NavLink to="/dashboard"
-                        // className={({ isActive }) =>{
-                        //      isActive ? "border-b-2" : "";
-                        //      location.pathname==="/"? "border-white":""
-                        //     }
-                        // }
-                        // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
                         className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                     >Dashboard</NavLink></li>
                     <li><NavLink to="/purchase-history"
-                        // className={({ isActive }) =>{
-                        //      isActive ? "border-b-2" : "";
-                        //      location.pathname==="/"? "border-white":""
-                        //     }
-                        // }
-                        // className={({ isActive }) =>isActive ? "border-none border-b-2 text-green-400 text-3xl" : ""}
                         className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " text-white" : ""}`}
                     >Purchase History</NavLink></li>
                 </ul>

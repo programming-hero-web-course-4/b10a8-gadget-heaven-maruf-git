@@ -1,3 +1,4 @@
+// import { Helmet } from "react-helmet-async";
 import { NavLink, Outlet, useLoaderData, useLocation } from "react-router-dom";
 // import CategoryProducts from "../components/CategoryProducts";
 
@@ -17,14 +18,13 @@ const Home = () => {
                     {/* role="tablist" */}
                     <div className=" mb-10 flex flex-col md:w-full lg:w-[20%] border border-black items-center p-10 rounded-xl gap-5 max-h-[460px]">
                         <NavLink
-                            // role="tab"
-                            // "btn bg-green-400  justify-start rounded-full w-[200px] font-semibold text-left" : " btn justify-start rounded-full  font-semibold w-[200px] text-left"
-                            // className={({ isActive }) =>
-                            //     isActive ? 
-                            // }
-                            className={`${pathname==="/" && "bg-green-400"} btn justify-start rounded-full  font-semibold w-[200px] text-left`}
+                            className={`${pathname === "/" && "bg-green-400"} btn justify-start rounded-full  font-semibold w-[200px] text-left`}
                             to="/"
-                        >All Product</NavLink>
+                        >All Product
+                            {/* <Helmet>
+                                <title>Gadget Heaven || Home || All Product</title>
+                            </Helmet> */}
+                        </NavLink>
                         {
                             categories.map((category) => <NavLink
                                 key={category.category_id}
@@ -33,7 +33,11 @@ const Home = () => {
                                     isActive ? "btn bg-green-400  justify-start rounded-full w-[200px]  font-semibold" : "btn  justify-start rounded-full  font-semibold w-[200px]"
                                 }
                                 to={`/categories/${category.category_name}`}
-                            >{category.category_name}</NavLink>)
+                            >{category.category_name}
+                                {/* <Helmet>
+                                    <title>Gadget Heaven || Home || {category.category_name}</title>
+                                </Helmet> */}
+                            </NavLink>)
                         }
                     </div>
                     <div id="products-container" className="w-full mb-10">
