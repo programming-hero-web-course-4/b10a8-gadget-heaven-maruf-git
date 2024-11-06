@@ -76,14 +76,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-3">
-                <button className="btn">
+                <Link to="/dashboard" className="btn">
                     Cart
                     <div className="badge badge-secondary">{cartCount}</div>
-                </button>
-                <button className="btn">
+                </Link>
+                <Link to="/dashboard/wishlist" className="btn">
                     WishList
                     <div className="badge badge-secondary">{wishlistCount}</div>
-                </button>
+                </Link>
             </div>
         </div>
     );
