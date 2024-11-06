@@ -17,7 +17,10 @@ const UserContextProvider = ({ children }) => {
     useEffect(() => {
         const cartItems = getStoredCartList();
         setCartCount(cartItems.length);
-
+        const price = cartItems.reduce((sum,product)=>{sum+product.price},0)
+        if (cartItems.length === 0 || price === 0)
+            setPurchaseBtn(true);
+        else setPurchaseBtn(false);
         const wishlistItems = getStoredWishList();
         setWishlistCount(wishlistItems.length);
     }, [])

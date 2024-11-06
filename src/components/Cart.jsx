@@ -61,9 +61,9 @@ const Cart = () => {
             const time= now.toLocaleTimeString();
 
             handlePurchaseHistory(storedCartList, cost, date,time);
-            setCost(0);
-            // for modal
             document.getElementById('my_modal_1').showModal();
+            // setCost(0);
+            // for modal
         }
         localStorage.removeItem("cart-list");
         setCartList([]);
