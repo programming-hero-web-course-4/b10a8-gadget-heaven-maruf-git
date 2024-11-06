@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import {  useLoaderData, useParams } from 'react-router-dom';
 import { FaRegStar } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 import { FcLike } from "react-icons/fc";

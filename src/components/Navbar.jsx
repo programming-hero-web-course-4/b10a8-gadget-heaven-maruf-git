@@ -2,28 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { getStoredCartList, getStoredWishList } from "../utils/addToDb";
 import UserContext from "../context/UserContext";
-
-
+import { FcLike } from "react-icons/fc";
+import { IoCartOutline } from "react-icons/io5";
 
 const Navbar = () => {
     const location = useLocation();
     const { category_name } = useParams();
-    const {setCartCount,user,cartCount,wishlistCount} = useContext(UserContext);
-    // for dynamic path
-    // console.log("our category name:", category_name);
+    const { setCartCount, user, cartCount, wishlistCount } = useContext(UserContext);
 
-    // const [cartListLength, setCartListLength] = useState(0);
-    // const [wishListLength, setWishListLength] = useState(0);
-    // useEffect(() => {
-    //     const currentCartList = getStoredCartList();
-    //     setCartListLength(currentCartList.length);
-        
-    // }, [])
-    // useEffect(() => {
-    //     const currentWishList = getStoredWishList();
-    //     setWishListLength(currentWishList.length);
-        
-    // }, [])
 
     return (
         <div className={`navbar  max-w-screen-xl mx-auto px-0 ${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? "bg-[rgb(149,56,226)]" : "bg-white"}`}>
@@ -75,14 +61,28 @@ const Navbar = () => {
                     >Purchase History</NavLink></li>
                 </ul>
             </div>
-            <div className="navbar-end gap-3">
-                <Link to="/dashboard" className="btn">
-                    Cart
-                    <div className="badge badge-secondary">{cartCount}</div>
+            <div className="navbar-end gap-5">
+                <Link to="/dashboard" >
+                    <div className="flex items-center relative">
+                        <div
+                            className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " border-none" : "border-gray-400"} p-2 border bg-white rounded-full`}
+                        >
+                            <IoCartOutline size={20} />
+                        </div>
+                        <div className="badge badge-secondary absolute right-[-15px] top-[-10px]">{cartCount}</div>
+                    </div>
+
                 </Link>
-                <Link to="/dashboard/wishlist" className="btn">
-                    WishList
-                    <div className="badge badge-secondary">{wishlistCount}</div>
+                <Link to="/dashboard/wishlist" >
+                    <div className="flex items-center relative">
+                        <div
+                            // className="p-2 border border-red-400 bg-white rounded-full"
+                            className={`${(location.pathname === "/" || location.pathname === "/categories/Laptops" || location.pathname === "/categories/Phones" || location.pathname === "/categories/Smart%20Watches" || location.pathname === "/categories/Accessories") ? " border-none" : "border-gray-400"} p-2 border bg-white rounded-full`}
+                        >
+                            <FcLike size={20} />
+                        </div>
+                        <div className="badge badge-secondary absolute right-[-15px] top-[-10px]">{wishlistCount}</div>
+                    </div>
                 </Link>
             </div>
         </div>
