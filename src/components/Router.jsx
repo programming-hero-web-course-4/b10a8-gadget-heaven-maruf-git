@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <div className="mt-5">
+        element: <div className="mt-5 bg-[rgb(246,246,246)]">
             <Navbar></Navbar>
             <Dashboard></Dashboard>
             <Footer></Footer>
